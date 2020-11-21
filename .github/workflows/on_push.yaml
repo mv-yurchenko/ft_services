@@ -3,16 +3,18 @@ on:
     branches:
       - '*'
 
-inputs:
-  who-to-greet:  
-    description: 'test'
-    required: true
-    default: 'World'
-outputs:
-  time: 
-    description: 'The time we greeted you'
-runs:
-  using: 'docker'
-  image: 'wordpress/Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+jobs:
+  build:
+    inputs:
+      who-to-greet:  
+        description: 'test'
+        required: true
+        default: 'World'
+    outputs:
+      time: 
+        description: 'The time we greeted you'
+    runs:
+      using: 'docker'
+      image: 'wordpress/Dockerfile'
+      args:
+        - ${{ inputs.who-to-greet }}
