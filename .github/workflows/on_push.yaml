@@ -5,11 +5,6 @@ on:
 
 jobs:
   build:
-    inputs:
-      who-to-greet:  
-        description: 'test'
-        required: true
-        default: 'World'
     outputs:
       time: 
         description: 'The time we greeted you'
@@ -17,6 +12,6 @@ jobs:
       using: 'docker'
       image: 'wordpress/Dockerfile'
       args:
-        - ${{ inputs.who-to-greet }}
+        - hello
     steps:
       - echo hellp
