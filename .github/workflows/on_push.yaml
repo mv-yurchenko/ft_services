@@ -18,3 +18,5 @@ jobs:
       image: 'wordpress/Dockerfile'
       args:
         - ${{ inputs.who-to-greet }}
+    steps:
+      - echo hellp
